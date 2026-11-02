@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+<style>/* CSS internal */ .menu span{display:block;font-size:2rem}</style>
+</head>
+<body data-page="dashboard">
+<header class="top"><a class="logo" href="dashboard.html"><img src="assets/logo.png" alt="" width="34" height="34"> BukuKu</a><nav aria-label="Navigasi utama"><a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><button id="logout" class="btn kecil" type="button">Keluar</button></nav></header>
+<main>
+<h1 id="greeting" style="margin-top:0">Selamat datang</h1>
+<p>Pilih menu untuk mengelola toko buku Anda.</p>
+<section class="grid" aria-label="Menu utama">
+<a class="menu" href="stok.html"><span>📚</span>Informasi Stok / Katalog</a>
+<a class="menu" href="tracking.html"><span>🚚</span>Tracking Pengiriman</a>
+<button class="menu" id="btnLaporan" type="button"><span>📊</span>Laporan Pemesanan</button>
+<button class="menu" id="btnHistory" type="button"><span>🧾</span>History Transaksi</button>
+</section>
+</main>
+<footer>&copy; 2026 BukuKu - Tugas UTS Pemrograman Web</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

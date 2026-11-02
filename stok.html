@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Katalog - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+<header class="top"><a class="logo" href="dashboard.html"><img src="assets/logo.png" alt="" width="34" height="34"> BukuKu</a><nav aria-label="Navigasi utama"><a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><button id="logout" class="btn kecil" type="button">Keluar</button></nav></header>
+<main>
+<h1>Informasi Stok dan Katalog</h1>
+<section class="kartu scroll" aria-label="Daftar stok">
+<table id="tbStok"><thead><tr><th>Cover</th><th>Kode</th><th>Judul</th><th>Jenis</th><th>Edisi</th><th>Stok</th><th>Harga</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+<p>Stok di bawah 20 ditandai merah.</p>
+</section>
+<section class="kartu" aria-label="Tambah stok">
+<h2>Tambah buku baru</h2>
+<form id="formStok" novalidate>
+<div class="baris">
+<div><label for="kode">Kode</label><input id="kode" name="kode"></div>
+<div><label for="nama">Judul</label><input id="nama" name="nama"></div>
+<div><label for="jenis">Jenis</label><select id="jenis" name="jenis"><option>Buku Wajib</option><option>Buku Praktikum</option><option>Buku Pendamping</option></select></div>
+<div><label for="edisi">Edisi</label><input id="edisi" name="edisi" type="number" min="1"></div>
+<div><label for="stokBaru">Stok</label><input id="stokBaru" name="stok" type="number" min="0"></div>
+<div><label for="harga">Harga (Rp)</label><input id="harga" name="harga" type="number" min="1"></div>
+</div>
+<button class="btn utama" type="submit">Tambah ke stok</button>
+</form>
+</section>
+</main>
+<footer>&copy; 2026 BukuKu - Tugas UTS Pemrograman Web</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tracking - BukuKu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+<header class="top"><a class="logo" href="dashboard.html"><img src="assets/logo.png" alt="" width="34" height="34"> BukuKu</a><nav aria-label="Navigasi utama"><a href="dashboard.html">Dashboard</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Tracking</a><button id="logout" class="btn kecil" type="button">Keluar</button></nav></header>
+<main>
+<h1>Informasi Pengiriman</h1>
+<form id="formCari" class="kartu" novalidate>
+<label for="noDO">Nomor Delivery Order</label>
+<input id="noDO" placeholder="Contoh: DO20260001">
+<button class="btn utama" type="submit">Cari</button>
+</form>
+<div id="hasil" aria-live="polite"></div>
+</main>
+<footer>&copy; 2026 BukuKu - Tugas UTS Pemrograman Web</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

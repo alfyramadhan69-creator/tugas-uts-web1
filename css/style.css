@@ -1,0 +1,110 @@
+:root{--bg:#eef1f6;--ink:#14213d;--ink2:#22345d;--acc:#e0a100;--acc2:#f6c453;--ok:#1b7f5c;--kartu:#fff;--garis:#d9e0ea;--bayang:0 1px 2px rgba(20,33,61,.06),0 8px 24px rgba(20,33,61,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#e6ebf3 0,var(--bg) 320px) no-repeat,var(--bg)}
+h1,h2,h3,.logo{font-family:"Palatino Linotype",Palatino,Georgia,serif;line-height:1.2;letter-spacing:-.01em}
+h1{font-size:clamp(1.7rem,4vw,2.3rem)}
+main>h1::after{content:"";display:block;width:56px;height:4px;margin-top:.55rem;border-radius:2px;background:var(--acc)}
+
+/* Header */
+.top{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.6rem;padding:.7rem 1.4rem;background:rgba(20,33,61,.94);backdrop-filter:blur(8px);box-shadow:0 2px 14px rgba(20,33,61,.25)}
+.top nav{display:flex;align-items:center;flex-wrap:wrap;gap:.2rem 1.2rem}
+.top a{color:#dfe7f3;text-decoration:none;position:relative;padding:.2rem 0;transition:color .2s}
+.top nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.top nav a:hover,.top nav a:focus-visible{color:#fff}
+.top nav a:hover::after,.top nav a:focus-visible::after{transform:scaleX(1)}
+.logo{display:flex;align-items:center;gap:.55rem;font-size:1.35rem;font-weight:700;color:var(--acc2)!important}
+.logo img{border-radius:9px;transition:transform .35s ease}
+.logo:hover img{transform:rotate(-8deg) scale(1.08)}
+.top .kecil{background:transparent;color:#dfe7f3;border-color:rgba(255,255,255,.35)}
+.top .kecil:hover{background:var(--acc);border-color:var(--acc);color:var(--ink)}
+
+main{max-width:1000px;margin:1.8rem auto;padding:0 1rem;animation:masuk .55s ease-out both}
+footer{text-align:center;padding:1.8rem 1rem;font-size:.85rem;color:#5b6b80}
+
+/* Kartu */
+.kartu{background:var(--kartu);border:1px solid var(--garis);border-radius:14px;padding:1.4rem;margin-bottom:1.3rem;box-shadow:var(--bayang)}
+.kartu h2{margin-top:0}
+
+/* Menu dashboard */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
+.menu{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ink2),var(--ink));color:#fff;border:0;border-radius:16px;padding:2rem 1rem;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;text-align:center;display:block;box-shadow:0 10px 22px rgba(20,33,61,.22);transition:transform .25s ease,box-shadow .25s ease}
+.menu::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.menu:hover,.menu:focus-visible{transform:translateY(-6px);box-shadow:0 16px 30px rgba(20,33,61,.3);outline:none}
+.menu:hover::after,.menu:focus-visible::after{transform:scaleX(1)}
+.menu:focus-visible{outline:3px solid var(--acc)}
+.menu span{transition:transform .3s ease}
+.menu:hover span{transform:scale(1.18) rotate(-6deg)}
+.grid>.menu{animation:naik .5s ease-out both}
+.grid>.menu:nth-child(2){animation-delay:.08s}
+.grid>.menu:nth-child(3){animation-delay:.16s}
+.grid>.menu:nth-child(4){animation-delay:.24s}
+
+/* Form */
+label{display:block;margin:.8rem 0 .25rem;font-weight:600;font-size:.92rem}
+input,select,textarea{width:100%;padding:.62rem .8rem;border:1.5px solid #b8c3d3;border-radius:8px;font:inherit;background:#fbfcfe;transition:border-color .2s,box-shadow .2s,background .2s}
+input:hover,select:hover,textarea:hover{border-color:#8a9ab1}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 4px rgba(224,161,0,.35)}
+.baris{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.4rem .9rem}
+
+/* Tombol */
+.btn{padding:.6rem 1.2rem;border:1.5px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;margin-top:.9rem;transition:transform .15s ease,box-shadow .2s,background .2s,color .2s}
+.btn:hover{background:var(--ink);color:#fff;transform:translateY(-2px);box-shadow:0 6px 14px rgba(20,33,61,.22)}
+.btn:active{transform:translateY(0) scale(.97);box-shadow:none}
+.btn:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.utama{background:var(--acc);border-color:var(--acc);color:var(--ink)}
+.utama:hover{background:var(--acc2);border-color:var(--acc2);color:var(--ink)}
+.kecil{padding:.28rem .7rem;margin:0;font-size:.85rem}
+
+/* Tabel */
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{padding:.7rem .75rem;border-bottom:1px solid var(--garis);text-align:left;vertical-align:middle}
+th{background:#e8edf5;font-size:.88rem;color:var(--ink2);font-weight:700}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:#f4f7fb}
+#tbStok tbody tr{animation:naik .4s ease-out both}
+#tbStok tbody tr:nth-child(2){animation-delay:.05s}
+#tbStok tbody tr:nth-child(3){animation-delay:.1s}
+#tbStok tbody tr:nth-child(4){animation-delay:.15s}
+#tbStok tbody tr:nth-child(5){animation-delay:.2s}
+#tbStok tbody tr:nth-child(6){animation-delay:.25s}
+td .qty{width:80px}
+.cover{width:46px;height:62px;object-fit:cover;border-radius:4px;box-shadow:0 3px 8px rgba(20,33,61,.3);transition:transform .25s ease}
+tr:hover .cover{transform:scale(1.12) rotate(-2deg)}
+.rendah{color:#b3261e;font-weight:700}
+
+/* Login */
+body[data-page="login"]{min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 15% 20%,#2b4378 0,transparent 45%),radial-gradient(circle at 85% 85%,#3a2f5e 0,transparent 40%),linear-gradient(160deg,#0f1a33,#14213d);overflow:hidden;position:relative}
+body[data-page="login"]::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(224,161,0,.35),transparent 65%);top:-120px;right:-100px;animation:melayang 9s ease-in-out infinite alternate}
+.login{position:relative;width:100%;max-width:420px;margin:2rem auto;animation:naik .6s ease-out both}
+.login .kartu{border:0;border-top:5px solid var(--acc);border-radius:16px;padding:2rem 1.8rem;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.login img{display:block;margin:0 auto .6rem;border-radius:16px;box-shadow:0 8px 18px rgba(20,33,61,.3)}
+.login h1{text-align:center;font-size:1.6rem;margin:.2rem 0 .6rem}
+.login .btn{width:100%}
+
+/* Modal */
+.overlay{position:fixed;inset:0;background:rgba(15,26,51,.65);backdrop-filter:blur(3px);display:grid;place-items:center;padding:1rem;z-index:9;animation:pudar .2s ease-out both}
+.modal{background:#fff;border-top:5px solid var(--acc);border-radius:14px;padding:1.5rem;width:min(470px,100%);max-height:90vh;overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.35);animation:muncul .28s cubic-bezier(.2,.9,.3,1.2) both}
+.modal h3{margin-top:0;font-size:1.3rem}
+
+/* Tracking */
+.progress{height:16px;background:#dfe5ee;border-radius:10px;overflow:hidden;margin:1.1rem 0}
+.progress div{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--ok),#35b887);transform-origin:left;animation:isi 1s cubic-bezier(.2,.8,.2,1) both}
+.tahap{display:flex;justify-content:space-between;gap:.3rem;list-style:none;padding:0;font-size:.85rem}
+.tahap li{flex:1;text-align:center;color:#7a8799}
+.tahap li::before{content:"";display:block;width:14px;height:14px;margin:0 auto .35rem;border-radius:50%;background:#c9d2de}
+.tahap li.aktif{color:var(--ok);font-weight:700}
+.tahap li.aktif::before{background:var(--ok);box-shadow:0 0 0 4px rgba(27,127,92,.2)}
+#hasil .kartu{animation:naik .5s ease-out both}
+.total{font-size:1.25rem;font-weight:700}
+
+/* Animasi */
+@keyframes masuk{from{opacity:0}to{opacity:1}}
+@keyframes naik{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pudar{from{opacity:0}to{opacity:1}}
+@keyframes muncul{from{opacity:0;transform:translateY(14px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes isi{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes melayang{from{transform:translate(0,0)}to{transform:translate(-60px,50px)}}
+@media(max-width:600px){.top{padding:.6rem 1rem}.kartu{padding:1.1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
